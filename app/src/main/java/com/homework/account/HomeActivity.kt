@@ -11,8 +11,8 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         val userID = intent.getStringExtra("userID")
-        val userIdHere = findViewById<TextView>(R.id.tv_id)
-        userIdHere.setText(userID)
+        val userIdHere = findViewById<TextView>(R.id.tv_id_info)
+        userIdHere.text = "아이디: $userID"
 
         val quitButton = findViewById<Button>(R.id.button_quit)
         quitButton.setOnClickListener {
