@@ -15,7 +15,7 @@ class SignInActivity : AppCompatActivity() {
         val loginButton = findViewById<Button>(R.id.button_login)
         loginButton.setOnClickListener{
             val textID = findViewById<EditText>(R.id.edit_text_id).text.toString()
-            val textPW = findViewById<EditText>(R.id.edit_text_pw).text.toString()
+            val textPW = findViewById<EditText>(R.id.edit_text_id).text.toString()
 
             if (textID == "" || textPW == "") {
                 Toast.makeText(this.applicationContext, "아이디/비밀번호를 확인해 주세요.", Toast.LENGTH_SHORT).show()
@@ -23,7 +23,6 @@ class SignInActivity : AppCompatActivity() {
             else {
                 val homeIntent = Intent(this, HomeActivity::class.java)
                 homeIntent.putExtra("userID",textID)
-                homeIntent.putExtra("userPW",textPW)
                 Toast.makeText(this.applicationContext, "로그인 성공", Toast.LENGTH_SHORT).show()
                 startActivity(homeIntent)
             }
